@@ -15,9 +15,7 @@ jobs:
         uses: actions/setup-node@v2.1.5
       - name: Install
         run: npm install
-      - name: Build
-        run: npm run build
-      - name: Make dist folder
+      - name: Create dist folder
         run: mkdir dist
       - name: Bundle
         run: npm run bundle
