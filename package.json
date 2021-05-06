@@ -4,7 +4,7 @@
   "description": "ghat script",
   "scripts": {
     "build": "node ./scripts/build.js",
-    "bundle": "tar czvf ./dist/bundle.tar.gz -C ./build *"
+    "bundle": "tar czvf ./dist/bundle.tar.gz -C build index.js lib"
   },
   "license": "ISC",
   "devDependencies": {
