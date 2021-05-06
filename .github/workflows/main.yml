@@ -17,5 +17,7 @@ jobs:
         run: npm install
       - name: Create dist folder
         run: mkdir dist
+      - name: Build
+        run: npm run build
       - name: Bundle
         run: npm run bundle
