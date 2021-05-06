@@ -18,7 +18,7 @@ jobs:
       - name: Build
         run: npm run build
       - run: ls
-      - run: cd ./bundle
+      - run: cd ./build
       - run: ls
       - run: cd ..
       - name: Bundle
