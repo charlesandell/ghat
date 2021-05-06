@@ -6,6 +6,13 @@ on:
     branches: [ master ]
   workflow_dispatch:
 jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build:
     runs-on: ubuntu-latest
     steps:
