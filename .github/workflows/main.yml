@@ -15,5 +15,5 @@ jobs:
         uses: actions/setup-node@v2.1.5
       - name: Install
         run: npm install
-      - name: Package
-        run: npm pacakage
+      - name: Bundle
+        run: npm run bundle
