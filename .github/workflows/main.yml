@@ -21,3 +21,5 @@ jobs:
         run: npm run build
       - name: Bundle
         run: npm run bundle
+      - name: Create dist folder
+        run: ls dist
