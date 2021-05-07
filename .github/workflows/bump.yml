@@ -1,11 +1,11 @@
-name: CI
+name: Bump
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  tags-ignore:  
-    -v*
+  tags:  
+    - v*
 jobs:
   build:
     runs-on: ubuntu-latest
