@@ -1,6 +1,6 @@
 {
   "name": "ghat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ghat script",
   "scripts": {
     "build": "node ./scripts/build.js",
