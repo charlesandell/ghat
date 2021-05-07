@@ -6,17 +6,19 @@ on:
     branches: [ master ]
 jobs:
   bump:
+    name: Bump Version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name:  'Automated Version Bump'
-        uses:  'phips28/gh-action-bump-version@master'
+      - name: Automated Version Bump
+        uses: phips28/gh-action-bump-version@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  build:
+  bundle:
     needs: bump
+    name: Create Bundle
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -25,25 +27,21 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.5
 
-      - name: Install
+      - name: NPM Install
         run: npm install
 
-      - name: Create dist folder
+      - name: Create /dist folder
         run: mkdir dist
 
-      - name: Build
-        run: npm run build
-
-      - name: Bundle
+      - name: Create Bundle
         run: npm run bundle
 
-      - name: Create dist folder
+      - name: Output Bundle Name
         run: ls dist
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
-          automatic_release_tag: "latest"
-          files: |
-            dist/*.tar.gz
+          automatic_release_tag: latest
+          files: dist/*.tar.gz
