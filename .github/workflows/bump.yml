@@ -2,10 +2,12 @@ name: Bump
 on:
   push:
     branches: [ master ]
+    tags-ignore:  
+      - v*
   pull_request:
     branches: [ master ]
-  tags:  
-    - v*
+    tags-ignore:  
+      - v*
 jobs:
   build:
     runs-on: ubuntu-latest
